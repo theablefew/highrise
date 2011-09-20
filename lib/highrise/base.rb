@@ -2,6 +2,12 @@ require 'active_resource'
 
 module Highrise
   class Base < ActiveResource::Base
+    
+    def self.url_for(n)
+      base  = site.to_s.split('@')[1]
+      File.join('https://', base, element_path(n)).gsub(".xml",'')
+    end
+
     protected
 
     # Fix for ActiveResource 3.1+ errors
@@ -18,6 +24,6 @@ module Highrise
         super
       end
     end
-
+   
   end
 end
