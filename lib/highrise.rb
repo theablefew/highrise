@@ -29,6 +29,7 @@
   recording
   subject_field
   subject_data
+  contact_data
 
 ].each do |lib|
   require File.join(File.dirname(__FILE__), 'highrise', lib)
